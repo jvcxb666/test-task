@@ -17,7 +17,7 @@ class PersonRepository implements RepositoryInterface
 
     public function findAll(): ?array
     {
-        return $this->models ?? null;
+        return $this->models;
     }
 
     public function find(string $id): ?EntityInterface
