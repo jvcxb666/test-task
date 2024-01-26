@@ -29,6 +29,7 @@ class SantaController extends AbstractController
         try{
             $data = $request->get("data");
             if(empty($data)) throw new Exception("Empty data passed in");
+            if(count($data) < 4) throw new Exception("Minimal players count is 4");
             
             $this->service->saveAll($data);
             $repo = $this->service->getRepository();
