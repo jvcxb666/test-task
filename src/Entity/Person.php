@@ -12,8 +12,8 @@ class Person implements EntityInterface
     private string $last_name;
     private string $middle_name;
     private string $email;
-    private string $santa_id;
-    private string $receiver_id;
+    private ?string $santa_id;
+    private ?string $receiver_id;
 
     public function __construct(string $name = null,string $last_name = null,string $middle_name = null,string $email = null)
     {
@@ -22,6 +22,8 @@ class Person implements EntityInterface
         if(!empty($last_name)) $this->last_name = $last_name;
         if(!empty($middle_name)) $this->middle_name = $middle_name;
         if(!empty($email)) $this->email = $email;
+        $this->santa_id = null;
+        $this->receiver_id = null;
     }
 
     public function getFullName(): ?string
@@ -74,7 +76,7 @@ class Person implements EntityInterface
         $this->email = $email;
     }
 
-    public function getSantaId(): string
+    public function getSantaId(): ?string
     {
         return $this->santa_id;
     }
@@ -84,7 +86,7 @@ class Person implements EntityInterface
         $this->santa_id = $id;
     }
 
-    public function getReceiverId(): string
+    public function getReceiverId(): ?string
     {
         return $this->receiver_id;
     }
