@@ -36,6 +36,7 @@ class PersonRepository implements RepositoryInterface
     {
         if($this->find($entity->getId()) != null) $this->remove($entity->getId());
         $this->models[] = $entity;
+        $this->models = [...$this->models];
     }
 
     public function remove(string $id): void
