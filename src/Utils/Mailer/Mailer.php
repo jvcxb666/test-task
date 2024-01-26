@@ -3,9 +3,11 @@
 namespace App\Utils\Mailer;
 
 use App\Utils\Mialer\Interface\AppMailerInterface;
+use Symfony\Component\DependencyInjection\Attribute\AsAlias;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 
+#[AsAlias]
 class Mailer implements AppMailerInterface
 {
 
