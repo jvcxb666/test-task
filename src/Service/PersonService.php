@@ -50,6 +50,11 @@ class PersonService implements ServiceInterface
         }
     }
 
+    public function getRepository(): RepositoryInterface
+    {
+        return $this->repository;
+    }
+
     private function validate($data): bool
     {
         if(!is_array($data) || empty($data)) return false;
